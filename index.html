@@ -161,6 +161,9 @@
       <div class="column is-five-sixths">
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
+          <center>
+            <img src="./static/images/main_fig.png"  width="1000">
+          </center> 
           (a) Illustrates the overall architecture, where image features $F^I_t$ first interact with $F^I_{t-1}$ in the Coarse Decoder to generate $F^c_t$, 
           after which a memory-gating module filters irrelevant entries from the spatio-temporal memory $F_{\text{mem}}$. 
           The Dual-Source Refined Decoder subsequently interacts with both the filtered memory and features from $t+1$, ultimately generating the pointmap $t$.
@@ -168,9 +171,6 @@
           (c) Illustrates the dual-source refined decoder, which alternately interacts with the next-frame features and relevant memory features through multiple self- 
           and cross-attention layers to optimize memory information utilization and maintain alignment with the subsequent frame.
           <br> <br>
-            <center>
-            <img src="./static/images/main_fig.png"  width="1000">
-            </center> 
         <br> 
         </div>
       </div>
@@ -193,15 +193,17 @@
             }
           </style>
 
+          <h3 class="title is-4">3D Reconstruction</h3>
           <div class="content has-text-justified">
             We evaluate the 3D reconstruction performance on the 7-scenes and NRGBD datasets.
             <br> <br>
               <center>
-              <img src="./static/images/recons_table1.png"  width="1000">
+              <img src="./static/images/recons_table1.png"  width="500">
               </center> 
           <br> 
           </div>
 
+          <h3 class="title is-4">Camera Pose Estimation</h3>
           <div class="content has-text-justified">
             We evaluate camera pose estimation on 7Scenes, TUM Dynamics, and ScanNet datasets.
             <br> <br>
@@ -211,19 +213,32 @@
           <br> 
           </div>
 
+      </div>
+    </div> 
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Visualization</h2>
+        <div class="content has-text-justified">
+          <style>
+            .grid-container {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr); /* Creates 2 columns with equal width */
+              grid-gap: 10px; /* Adjust the gap between the divs */
+            }
+            .grid-item {
+              width: 100%;
+            }
+          </style>
+          
           <div class="content has-text-justified">
             We visualize the 3D reconstruction results of LONG3R and other state-of-the-art methods.
             <br> <br>
               <center>
               <img src="./static/images/vis.jpg"  width="1000">
               </center> 
-          <br> 
-          </div>
-
-
-      </div>
-    </div> 
-
+    <br> 
+    </div>
   </div>
 </section>
 
