@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <meta charset="utf-8">
   <meta name="description"
         content="LONG3R: Long Sequence Streaming 3D Reconstruction">
@@ -134,7 +137,8 @@
 </section>
 
 
-<section class="section">
+<!-- <section class="section"> -->
+<section class="section" style="padding-top: 2rem;">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -144,15 +148,15 @@
           <p>
             Recent advancements in sparse multi-view scene reconstruction have been significant, yet existing methods face limitations 
             when processing streams of input images. These methods either rely on time-consuming offline optimization or are restricted to shorter sequences, 
-            hindering their applicability in real-time scenarios. In this work, we propose LONG3R (\textbf{LO}ng sequence streami\textbf{NG} \textbf{3}D \textbf{R}econstruction), 
+            hindering their applicability in real-time scenarios. In this work, we propose LONG3R (<strong>LO</strong>ng sequence streami<strong>NG</strong> <strong>3</strong>D <strong>R</strong>econstruction), 
             a novel model designed for streaming multi-view 3D scene reconstruction over longer sequences. Our model achieves real-time processing by operating recurrently, 
             maintaining and updating memory with each new observation. We first employ a memory gating mechanism to filter relevant memory, which, together with a new observation, 
             is fed into a dual-source refined decoder for coarse-to-fine interaction. To effectively capture long-sequence memory, we propose a 3D spatio-temporal memory that 
-            dynamically prunes redundant spatial information while adaptively adjusting resolution along the scene. To enhance our model’s performance on long sequences 
+            dynamically prunes redundant spatial information while adaptively adjusting resolution along the scene. To enhance our model&rsquo;s performance on long sequences 
             while maintaining training efficiency, we employ a two-stage curriculum training strategy, each stage targeting specific capabilities. 
             Experiments demonstrate that LONG3R outperforms state-of-the-art streaming methods, particularly for longer sequences, 
             while maintaining real-time inference speed.
-          </p>
+          </p>          
         </div>
       </div>
     </div>
@@ -166,13 +170,26 @@
           <center>
             <img src="./static/images/main_fig.png"  width="1000">
           </center> 
-          (a) Illustrates the overall architecture, where image features $F^I_t$ first interact with $F^I_{t-1}$ in the Coarse Decoder to generate $F^c_t$, 
+          <!-- (a) Illustrates the overall architecture, where image features $F^I_t$ first interact with $F^I_{t-1}$ in the Coarse Decoder to generate $F^c_t$, 
           after which a memory-gating module filters irrelevant entries from the spatio-temporal memory $F_{\text{mem}}$. 
           The Dual-Source Refined Decoder subsequently interacts with both the filtered memory and features from $t+1$, ultimately generating the pointmap $t$.
           (b) Details the attention-based memory gating module, which selects relevant information from the memory. 
           (c) Illustrates the dual-source refined decoder, which alternately interacts with the next-frame features and relevant memory features through multiple self- 
-          and cross-attention layers to optimize memory information utilization and maintain alignment with the subsequent frame.
-          <br> <br>
+          and cross-attention layers to optimize memory information utilization and maintain alignment with the subsequent frame. -->
+          <p>
+            (a) Illustrates the overall architecture, where image features \( F^I_t \) first interact with \( F^I_{t-1} \) in the Coarse Decoder to generate \( F^c_t \),
+            after which a memory-gating module filters irrelevant entries from the spatio-temporal memory \( F_{\text{mem}} \).
+            The Dual-Source Refined Decoder subsequently interacts with both the filtered memory and features from \( t+1 \), ultimately generating the pointmap at time \( t \).
+          </p>
+          <p>
+            (b) Details the attention-based memory gating module, which selects relevant information from the memory.
+          </p>
+          <p>
+            (c) Illustrates the dual-source refined decoder, which alternately interacts with the next-frame features and relevant memory features through multiple self-
+            and cross-attention layers to optimize memory information utilization and maintain alignment with the subsequent frame.
+          </p>
+          
+          <br>
         <br> 
         </div>
       </div>
