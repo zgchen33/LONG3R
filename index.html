@@ -169,12 +169,6 @@
           <center>
             <img src="./static/images/main_fig.png"  width="1000">
           </center> 
-          <!-- (a) Illustrates the overall architecture, where image features $F^I_t$ first interact with $F^I_{t-1}$ in the Coarse Decoder to generate $F^c_t$, 
-          after which a memory-gating module filters irrelevant entries from the spatio-temporal memory $F_{\text{mem}}$. 
-          The Dual-Source Refined Decoder subsequently interacts with both the filtered memory and features from $t+1$, ultimately generating the pointmap $t$.
-          (b) Details the attention-based memory gating module, which selects relevant information from the memory. 
-          (c) Illustrates the dual-source refined decoder, which alternately interacts with the next-frame features and relevant memory features through multiple self- 
-          and cross-attention layers to optimize memory information utilization and maintain alignment with the subsequent frame. -->
           <p>
             (a) Illustrates the overall architecture, where image features \( F^I_t \) first interact with \( F^I_{t-1} \) in the Coarse Decoder to generate \( F^c_t \),
             after which a memory-gating module filters irrelevant entries from the spatio-temporal memory \( F_{\text{mem}} \).
